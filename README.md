@@ -1,2 +1,19 @@
 # Best-Odds-Calculator
-A tool that scans sports betting websites for arbitrage opportunities, returning the best possible match and associated gains.
+
+This code is designed to help you take advantage of betting bonuses across three different sports betting websites. The idea is to place equal bets on a match across the three sites to trigger the welcome bonus, which often requires placing a second bet after the first. While the code could still be polished and improved, I have tested it successfully and achieved net gains.
+
+## How it works:
+
+1. **Identify welcome bonuses**:
+   You select three different betting websites (unlike in the code which is a test version) that offer a welcome bonus (e.g., if you lose or win, you get your money back). The code identifies the odds for a specific football match (although the code can be easily adapted to other sports).
+
+2. **Place Your Bets**:
+   The strategy requires you to place an equal amount of money on all three websites. The code then calculates the best first bet by identifying the odds that are closest to 3 on each website, which minimizes risk and ensures a constant gain across all outcomes.
+
+3. **Second Bet**:
+   After the first bet, the websites usually force you to place a second bet before releasing the bonus. The code uses a mathematical formula (the sum of the inverse of the odds) to calculate the second bet, which will most likely result in a loss (unless it detects sure-bets which are very rare) which is also constant across all outcomes. However, the code minimizes this loss to ensure that the overall result after both bets is a net gain.
+
+4. **Result**:
+   Over the course of the two bets, the strategy has been tested and proven to generate a net gain.
+
+
