@@ -15,7 +15,7 @@ This tool helps you:
 - Web scraping of betting odds from multiple sites
 - Automatic matching of teams across different sites
 - Calculation of optimal bet distribution
-- Detection of arbitrage opportunities (sure bets)
+- Detection of arbitrage opportunities
 - Support for multiple sports leagues
 
 ## Installation
