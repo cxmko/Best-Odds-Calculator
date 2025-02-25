@@ -1,0 +1,72 @@
+# Configuration file
+# Best-Odds-Calculator Configuration
+
+# Path to Chrome WebDriver
+webdriver_path: "chromedriver"  # Update with your path, e.g., "/usr/local/bin/chromedriver" or "C:\\path\\to\\chromedriver.exe"
+
+# Currently selected league
+selected_league: "ligue_1"
+
+# Betting parameters
+betting:
+  total_amount: 600  # Total amount to bet across all outcomes
+
+# League configurations
+leagues:
+  ligue_1:
+    urls:
+      - "https://www.france-pari.fr/football/france/ligue-1-mcdonald-stm"
+      - "https://www.france-pari.fr/football/france/ligue-1-mcdonald-stm"
+      - "https://www.france-pari.fr/football/france/ligue-1-mcdonald-stm"
+    container_classes:
+      - "no-full-width-container"
+      - "no-full-width-container"
+      - "no-full-width-container"
+    match_classes:
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+    odds_classes:
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+
+  premier_league:
+    urls:
+      - "https://www.france-pari.fr/football/angleterre/premier-league"
+      - "https://www.france-pari.fr/football/angleterre/premier-league"
+      - "https://www.france-pari.fr/football/angleterre/premier-league"
+    container_classes:
+      - "no-full-width-container"
+      - "no-full-width-container"
+      - "no-full-width-container"
+    match_classes:
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+    odds_classes:
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+
+  # Add more leagues as needed
+  la_liga:
+    urls:
+      - "https://www.france-pari.fr/football/espagne/laliga"
+      - "https://www.france-pari.fr/football/espagne/laliga"
+      - "https://www.france-pari.fr/football/espagne/laliga"
+    container_classes:
+      - "no-full-width-container"
+      - "no-full-width-container"
+      - "no-full-width-container"
+    match_classes:
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+      - "actors.text-ellipsis"
+    odds_classes:
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+      - "container-odd-and-trend"
+
+# Note: In a real scenario, you should configure different betting websites
+# The above example uses the same site for testing purposes

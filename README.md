@@ -1,19 +1,103 @@
 # Best-Odds-Calculator
 
-This code is designed to help you take advantage of betting bonuses across three different sports betting websites using web scraping. The idea is to place equal bets on a match across the three sites to trigger the welcome bonus, which often requires placing a second bet after the first. While the code could still be polished and improved, I have tested it successfully and achieved net gains.
+A Python tool for analyzing betting odds across multiple sports betting websites to find arbitrage betting strategies, particularly for taking advantage of welcome bonuses.
 
-## How it works:
+## Overview
 
-1. **Identify welcome bonuses**:
-   You select three different betting websites (unlike in the code which is a test version) that offer a welcome bonus (e.g., if you lose or win, you get your money back). The code identifies the odds for a specific football match (although the code can be easily adapted to other sports).
+This tool helps you:
+1. Scrape betting odds from multiple sports betting websites
+2. Identify the best betting opportunities
+3. Calculate optimal bet distribution to minimize risk
+4. Maximize returns from welcome bonuses offered by betting sites
 
-2. **Place Your Bets**:
-   The strategy first requires you to place an equal amount of money on all three websites. The code then calculates the best first bet by identifying the odds that are closest to 3 on each website (for 3 outcomes), which minimizes risk and ensures a constant gain across all outcomes.
+## Features
 
-3. **Second Bet**:
-   After the first bet, the websites usually forces you to place a second bet before releasing the bonus. The code uses a mathematical formula (the sum of the inverse of the odds) to calculate the optimal second bet (it tells you the amount to be betted on each website for each outcome of the "best match") , which will most likely result in a loss (unless it detects sure-bets that are very rare) which is constant across all outcomes (the code will also return a loss coefficient). However, the code minimizes this loss to ensure that the overall result after both bets is a net gain.
+- Web scraping of betting odds from multiple sites
+- Automatic matching of teams across different sites
+- Calculation of optimal bet distribution
+- Detection of arbitrage opportunities (sure bets)
+- Support for multiple sports leagues
 
-4. **Result**:
-   Over the course of the two bets, the strategy has been tested and proven to generate a net gain.
+## Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/cxmko/Best-Odds-Calculator.git
+cd Best-Odds-Calculator
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download Chrome WebDriver
+# Visit: https://chromedriver.chromium.org/downloads
+# Download the version that matches your Chrome browser
+# Extract and update the path in config/config.yaml
+```
+
+## Configuration
+
+Update the `config/config.yaml` file with:
+
+1. Path to your ChromeDriver
+2. Betting websites you want to use
+3. Total amount you want to bet
+4. League you want to analyze
+
+```yaml
+webdriver_path: "/path/to/your/chromedriver"
+selected_league: "premier_league"
+betting:
+  total_amount: 300
+```
+
+## Usage
+
+```bash
+# Run the main script
+python -m src.main
+```
+
+## How It Works
+
+1. **Scrape Odds**: The tool scrapes betting odds from configured websites for a selected league.
+2. **Find Best Opportunity**: It analyzes all possible combinations of bets across the sites.
+3. **Calculate Bet Distribution**: For the best opportunity, it calculates how much to bet on each outcome.
+4. **Display Results**: It shows the optimal betting strategy and potential profits/losses.
+
+### Betting Strategy
+
+The strategy works in two phases:
+
+1. **First Bet**:
+   - Place bets across multiple betting sites to trigger welcome bonuses
+   - The tool calculates the optimal distribution to minimize risk
+
+2. **Second Bet**:
+   - After receiving bonuses, place a second bet as required by the sites
+   - The tool minimizes potential losses on this bet
+   - The overall result should be a net gain due to the bonuses
+
+## Directory Structure
+
+```
+Best-Odds-Calculator/
+├── config/               # Configuration files
+│   └── config.yaml
+├── src/                  # Source code
+│   ├── calculators/      # Betting calculation modules
+│   ├── scrapers/         # Web scraping modules
+│   ├── utils/            # Utility functions
+│   └── main.py           # Main application script
+├── tests/                # Test cases
+├── requirements.txt      # Dependencies
+└── README.md             # Documentation
+```
+
+## Results
+
+Over the course of the two bets, the strategy has been tested and proven to generate a net gain.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
